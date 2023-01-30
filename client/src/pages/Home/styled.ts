@@ -37,9 +37,18 @@ export const Container = styled.div`
   border-radius: 5vh;
   overflow: hidden;
   text-shadow: 1vh 1vh 2vh rgba(0,0,0,0.2);
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
 `;
 
-export const nav = styled.div`
+export const topNav = styled.div`
+  padding: 0 1.5vw;
+  height: 8vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+`;
+
+export const bottomNav = styled.div`
   padding: 0 1.5vw;
   height: 8vh;
   display: flex;
@@ -51,6 +60,14 @@ export const Home = styled.div`
   width: 100%;
   height: 100%;
   
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   scroll-behavior: smooth !important;
   overflow: visible;
+`;
+
+export const HomeTitle = styled.div`
+  font-style: italic;
 `;

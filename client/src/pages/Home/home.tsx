@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 import * as S from './styled';
 
+import { ContentsNav } from '../../components/ContentsNav/contentsNav';
+import { AnimationBox } from '../../components/Home/AnimationBox/animationBox';
+import { Contact } from '../../components/Contact/contact';
 import { PaginationArrows } from '../../components/PaginationArrows/paginationArrows';
 import { ShortScreen } from '../../components/ShortScreen/shortScreen';
-import { Contact } from '../../components/Contact/Contact';
 
 export function Home() {
   const [isSize, setIsSize] = useState(false);
@@ -29,20 +31,23 @@ export function Home() {
         <S.Layout>
           {isSize ?
             <>
-              <S.nav style={{alignItems: "flex-end"}}>
-
-              </S.nav>
+              <S.topNav>
+                <ContentsNav />
+              </S.topNav>
 
               <S.Container>
                 <S.Home>
-                    
+                  <S.HomeTitle>
+                    <h1>Welcome to my portfolio!</h1>
+                  </S.HomeTitle>
+                  <AnimationBox />
                 </S.Home>
               </S.Container>
 
-              <S.nav style={{alignItems: "flex-start"}}>
+              <S.bottomNav style={{alignItems: "flex-start"}}>
                 <Contact />
                 <PaginationArrows />
-              </S.nav>
+              </S.bottomNav>
             </>
             : <ShortScreen />
           }
